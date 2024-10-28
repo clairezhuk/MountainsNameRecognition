@@ -1,0 +1,71 @@
+# Named Entity Recognition for Mountain Names
+
+## Project Overview
+
+This project aims to develop a Named Entity Recognition (NER) model to identify mountain names within texts. The primary objectives were to create a labeled dataset, select an appropriate model architecture, train and fine-tune the model, and prepare a demonstration of the inference results.
+
+## Task Description
+
+The task requirements included:
+- Finding or creating a dataset with labeled mountain names.
+- Selecting a suitable architecture for solving NER tasks.
+- Training or fine-tuning the chosen model.
+- Preparing demo code or a notebook showcasing the inference results.
+
+## Dataset Creation
+
+1. **Dataset Generation**:
+   - The dataset was generated using ChatGPT to create sentences that included mountain names and geographical names.
+   - During this phase, mountain names were pre-annotated with the label `|` and other geographical names with `/`.
+   - To add variety to the dataset, prompts specified the regions from which the mountains should originate. The resulting dataset contains the following categories:
+     - Europe mountains
+     - Asia mountains
+     - Africa mountains
+     - America mountains
+     - Australia and Oceania mountains
+     - Underwater mountains
+     - Another planets mountains
+     - Fictional mountains
+   - The final dataset comprises **4,645 sentences**.
+
+2. **Data Preparation**:
+   - After generating the sentences, they were copied into a text file. A script was then created to read this file, search for the labels, and encode them into the CoNLL format, applying the necessary tags.
+   - Simultaneously, the dataset was split into training and testing sets.
+
+## Model Implementation
+
+3. **BERT-based Pre-trained NER Model**:
+   - The implementation of the BERT-based pre-trained NER model was carried out in a separate notebook, as this model requires a powerful GPU for execution.
+
+4. **Model Evaluation**:
+   - The model's performance was assessed using appropriate metrics to ensure its effectiveness in recognizing mountain names.
+
+## How to Set Up the Project
+
+1. **Clone the Repository**:
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
+   ```
+
+2. **Install Dependencies**:
+   Ensure you have the necessary libraries installed:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Prepare the Dataset**:
+   - Place the generated dataset file in the specified directory, as outlined in the code.
+
+4. **Run the Training Notebook**:
+   - Open the Jupyter notebook for model training and follow the instructions within to execute the training process.
+
+5. **Evaluate the Model**:
+   - Utilize the provided evaluation code to assess the model's performance on the training and test datasets.
+
+6. **Inference**:
+   - Use the demo code to perform inference on new texts containing mountain names.
+
+## Conclusion
+
+The model achieved **98% accuracy** on both the training and test datasets, indicating strong performance. However, it is important to note that while the model is not perfect, it has not overfitted and can generalize well to unseen data.
